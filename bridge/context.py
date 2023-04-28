@@ -9,6 +9,7 @@ class ContextType(Enum):
     IMAGE = 3  # 图片消息
     IMAGE_CREATE = 10  # 创建图片命令
     JOIN_GROUP = 20  # 加入群聊
+    PATPAT = 21  # 拍了拍
 
     def __str__(self):
         return self.name
@@ -59,6 +60,4 @@ class Context:
             del self.kwargs[key]
 
     def __str__(self):
-        return "Context(type={}, content={}, kwargs={})".format(
-            self.type, self.content, self.kwargs
-        )
+        return "Context(type={}, content={}, kwargs={})".format(self.type, self.content, self.kwargs)
